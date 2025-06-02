@@ -34,8 +34,8 @@
   tg.ready();
   tg.expand();
 
-  const initDataUnsafe = tg.initDataUnsafe;
-  const user = initDataUnsafe?.user;
+  const initData = tg.initData;
+  const user = initData?.user;
   document.getElementById("username").textContent = user?.first_name || "гость";
 
   // Функция для отправки запроса на бек
