@@ -34,8 +34,8 @@
   tg.ready();
   tg.expand();
 
-  const initData = tg.initData;
-  const user = initData?.user;
+  const initDataUnsafe = tg.initDataUnsafe;
+  const user = initDataUnsafe?.user;
   document.getElementById("username").textContent = user?.first_name || "гость";
 
   // Функция для отправки запроса на бек
@@ -47,7 +47,7 @@
         method: 'POST', // или GET, в зависимости от API
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `tma ${initData}`,  // Добавляем initData в заголовок Authorization с префиксом 'tga '
+          'Authorization': `tma ${initData}`,  // Добавляем initData в заголовок Authorization с префиксом 'tma '
         },
         // Если нужно, можно добавить тело запроса
         // body: JSON.stringify({ someData: 123 })
